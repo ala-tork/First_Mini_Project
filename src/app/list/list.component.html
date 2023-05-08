@@ -1,6 +1,6 @@
 <div class="row mt-5">
     <ng-container *ngFor="let h of Heros">
-        <div class="col-3" >
+        <div class="col-4" >
             <div
                 [ngClass]="{'card p-1':true,'hero':true,'height_power':h.power>50,'medium_power':h.power<100 && h.power>=50,'low_power':h.power<50}"
                     >
