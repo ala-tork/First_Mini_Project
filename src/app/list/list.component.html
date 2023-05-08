@@ -1,22 +1,23 @@
 <div class="row mt-5">
     <ng-container *ngFor="let h of Heros">
-        <div class="col-3">
+        <div class="col-3" >
             <div
-                [ngClass]="{'card p-1':true,'height_power':h.power>50,'medium_power':h.power<100 && h.power>=50,'low_power':h.power<50}">
+                [ngClass]="{'card p-1':true,'hero':true,'height_power':h.power>50,'medium_power':h.power<100 && h.power>=50,'low_power':h.power<50}"
+                    >
                 <div class="card-image">
-                    <img class="w-100" [src]="h.image" />
+                    <img class="w-100"  [src]="h.image" style="width: cover;"/>
                 </div>
                 <div class="card-body">
-                    <h2>{{h.name}}</h2>
-                    <hr />
-                    <p>{{h.power}}%</p>
-                    <p>{{h.description}}%</p>
+                    <h2 > Name :<span style="color:aliceblue"> {{h.name}}</span></h2>
+                    
+                    <p class="fw-bold text-center" style="background-color: aliceblue;">POWER : {{h.power}}%</p>
+                    <p style="text-transform: capitalize;height: 150px;text-overflow:ellipsis; overflow: hidden;">{{h.description}} </p><a [routerLink]="['/details',h._id]">See More</a>
+
                     <div class="row justify-content-around p-5">
                         <div class="col-4">
                             <button class="btn btn-danger" (click)="delete(h._id)">Delete</button>
                         </div>
                         <div class="col-4">
-
                             <button class="btn btn-primary" [routerLink]="['/edite',h._id]" >Update</button>
                         </div>
                     </div>

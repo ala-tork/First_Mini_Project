@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { Router } from '@angular/router';
 import { UpdateComponent } from './update/update.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UpdateComponent } from './update/update.component';
     ListComponent,
     NavbarComponent,
     NotFoundComponentComponent,
-    UpdateComponent
+    UpdateComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
