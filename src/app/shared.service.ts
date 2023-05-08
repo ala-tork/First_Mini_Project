@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { hero } from './model/Hero.component';
+import { BehaviorSubject, Observable, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,10 @@ export class SharedService {
   private url='http://127.0.0.1:3000/';
 
   public Heros:any;
+  searchBarTouchedSubject = new BehaviorSubject<String>("");
+  searchBarTouched$ = this.searchBarTouchedSubject.asObservable();
+
+  searchInput!: string;
 //get all heros
   getHeros(){
     return this.http.get(this.url+"hero/all");
@@ -30,5 +36,8 @@ export class SharedService {
   
   update(id:any,hero:any){
     return this.http.put(this.url+"hero/update/"+id,hero);
+  }
+  searchByName(heroName: string): Observable<hero[]> {
+    return this.http.get<hero[]>(`${this.url}/search?heroName=${heroName}`);
   }
 }

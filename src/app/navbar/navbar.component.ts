@@ -14,8 +14,8 @@ export class NavbarComponent {
   
   
 
-   search(){
-
-
+   search() {
+    this._shared.searchInput = this.HeroName;
+    this._shared.searchBarTouchedSubject.next(this.HeroName);
   }
 }

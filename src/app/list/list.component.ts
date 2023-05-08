@@ -11,17 +11,23 @@ export class ListComponent {
   }
   Heros:any;
   ngOnInit(): void {
-
-    this._shared.getHeros().subscribe(
-      res=>{
-        this.Heros=res;
-        console.log(this.Heros);
-        
-      },
-      err=>{
-        console.log(err);
-      }
-    )
+      this._shared.searchBarTouched$.subscribe(
+        (value => {
+          if (value.length === 0) {
+            this._shared.getHeros().subscribe(
+              res => {
+                this.Heros = res;
+              })
+          } else {
+            console.log("else")
+            this._shared.searchByName(this._shared.searchInput).subscribe(
+              res => {
+                this.Heros = res;
+              })
+          }
+        })
+      
+    );console.log(this.Heros);
 
   }
   delete(id:any){
