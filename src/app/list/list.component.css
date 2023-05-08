@@ -1,12 +1,24 @@
-
-.height_power{
+.height_power {
     background-color: brown;
 }
-.medium_power{
+
+.medium_power {
     background-color: green;
 
 }
-.low_power{
+
+.low_power {
     background-color: wheat;
 
+}
+
+.card-image {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.hero-power {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
 }
