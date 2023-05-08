@@ -7,15 +7,14 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private _shared:SharedService){
+  constructor(private _shared: SharedService) {
 
   }
-   HeroName:string ="";
-  
-  
-
-   search(){
+  HeroName: string = "";
 
 
+  search() {
+    this._shared.searchInput = this.HeroName;
+    this._shared.searchBarTouchedSubject.next(this.HeroName);
   }
 }

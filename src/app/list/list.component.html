@@ -1,7 +1,7 @@
-<div class="row mt-5">
+<div class="row mt-5 g-3">
     <ng-container *ngFor="let h of Heros">
         <div class="col-3">
-            <div
+            <div class="hero-card"
                 [ngClass]="{'card p-1':true,'height_power':h.power>50,'medium_power':h.power<100 && h.power>=50,'low_power':h.power<50}">
                 <div class="card-image">
                     <img class="w-100" [src]="h.image" />
@@ -9,15 +9,14 @@
                 <div class="card-body">
                     <h2>{{h.name}}</h2>
                     <hr />
-                    <p>{{h.power}}%</p>
+                    <p class="hero-power">{{h.power}}%</p>
                     <p>{{h.description}}%</p>
-                    <div class="row justify-content-around p-5">
+                    <div class="row justify-content-around">
                         <div class="col-4">
                             <button class="btn btn-danger" (click)="delete(h._id)">Delete</button>
                         </div>
                         <div class="col-4">
-
-                            <button class="btn btn-primary" [routerLink]="['/edite',h._id]" >Update</button>
+                            <button class="btn btn-primary" [routerLink]="['/edite',h._id]">Update</button>
                         </div>
                     </div>
                 </div>
