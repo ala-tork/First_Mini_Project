@@ -7,7 +7,7 @@ import { UpdateComponent } from './update/update.component';
 import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
-  {path:"",redirectTo:'/ajout',pathMatch:"full"},
+  {path:"",redirectTo:'/list',pathMatch:"full"},
   {path:'ajout',component:AjoutComponent},
   {path:'list',component:ListComponent},
   {path:'edite/:id',component:UpdateComponent},

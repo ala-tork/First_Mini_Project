@@ -16,6 +16,8 @@ export class ListComponent {
           if (value.length === 0) {
             this._shared.getHeros().subscribe(
               res => {
+          console.log(res);
+
                 this.Heros = res;
               })
           } else {

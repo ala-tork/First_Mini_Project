@@ -38,6 +38,6 @@ export class SharedService {
     return this.http.put(this.url+"hero/update/"+id,hero);
   }
   searchByName(heroName: string): Observable<hero[]> {
-    return this.http.get<hero[]>(`${this.url}/search?heroName=${heroName}`);
+    return this.http.get<hero[]>(`${this.url}hero/search?heroName=${heroName}`);
   }
 }
